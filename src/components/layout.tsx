@@ -25,8 +25,10 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div>
-        <main>{children}</main>
+      <div className="flex justify-center w-full">
+        <div className="bg-gray-400 w-full flex" style={{ maxWidth: '935px'}}>
+          {children}
+        </div>
       </div>
     </>
   )
