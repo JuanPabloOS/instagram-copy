@@ -1,11 +1,14 @@
 import React from 'react'
-import { Link } from 'gatsby';
 
-const IconButton = ({to="#", icon}) => {
+interface IconButtonProps {
+  noMargin?: boolean;
+  children?: React.ReactNode;
+}
+const IconButton = ({noMargin, children, ...rest}:IconButtonProps) => {
   return (
-    <Link to={to} className="w-5 h-5 inline-block mr-5 bg-gray-400">
-      {icon}
-    </Link>
+    <button type='button' className={`w-5 h-5 inline-block ${noMargin ? '' : 'mr-5'} `} {...rest}>
+      {children}
+    </button>
   )
 }
 
